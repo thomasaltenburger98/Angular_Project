@@ -1,0 +1,14 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+mat-sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* falls du später unten willst -> flex-end */
+  padding-top: 80px; // <-- Abstand von oben z.B. 80px
+}

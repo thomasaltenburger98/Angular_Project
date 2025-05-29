@@ -1,0 +1,51 @@
+<!-- Nur wenn Rolle 'admin' -->
+@if (role=='admin'){
+
+  <ng-container>
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/books/admin">
+            📚 Bücher
+          </a>
+          <a mat-list-item routerLink="/authors/admin">
+            👤 Autoren
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </ng-container>
+
+} @else if (role=='user'){
+
+  <!-- Nur wenn Rolle 'user' -->
+  <ng-container>
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/books/user">
+            📚 Bücher
+          </a>
+          <a mat-list-item routerLink="/authors/user">
+            👤 Autoren
+          </a>
+          <a mat-list-item routerLink="/cart">
+            🛒 Warenkorb
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </ng-container>
+} @else {
+  <p>Keine Rolle gefunden</p>
+}
+
+
