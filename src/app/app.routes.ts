@@ -4,8 +4,10 @@ import {AuthorListUserComponent} from './features/authors/author-list-user/autho
 import {CartModalComponent} from './features/cart/cart-modal/cart-modal.component';
 import {BookListAdminComponent} from './features/books/book-list-admin/book-list-admin.component';
 import {AuthorListAdminComponent} from './features/authors/author-list-admin/author-list-admin.component';
+import {HomeComponent} from './features/home/home.component';
 
 export const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'books/book-list-user', component: BookListUserComponent},
   {path: 'authors/author-list-user', component: AuthorListUserComponent},
   {path: 'cart/cart-modal', component: CartModalComponent},
