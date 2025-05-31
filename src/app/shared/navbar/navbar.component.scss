@@ -11,4 +11,28 @@ mat-sidenav {
   flex-direction: column;
   justify-content: flex-start; /* falls du später unten willst -> flex-end */
   padding-top: 80px; // <-- Abstand von oben z.B. 80px
+  width: 240px;
 }
+
+.top-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 240px;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1;
+}
+

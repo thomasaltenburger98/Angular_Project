@@ -1,6 +1,16 @@
 <!-- Nur wenn Rolle 'admin' -->
 @if (role=='admin'){
 
+  <mat-toolbar color="primary" class="top-toolbar">
+    <a routerLink="/">
+      <img src="assets/logo/Logo.png" alt="FHmazon Logo" class="logo">
+    </a>
+
+    <span class="spacer"></span>
+    <button mat-button  (click)="loginLogout()">Login/Logout</button>
+  </mat-toolbar>
+
+
   <ng-container>
     <mat-sidenav-container class="example-container">
       <mat-sidenav mode="side" opened>
@@ -21,6 +31,15 @@
   </ng-container>
 
 } @else if (role=='user'){
+  <mat-toolbar color="primary" class="top-toolbar">
+    <a routerLink="/">
+      <img src="assets/logo/Logo.png" alt="FHmazon Logo" class="logo">
+    </a>
+
+    <span class="spacer"></span>
+    <button mat-button (click)="loginLogout()">Login/Logout</button>
+  </mat-toolbar>
+
 
   <!-- Nur wenn Rolle 'user' -->
   <ng-container>
