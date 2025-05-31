@@ -9,8 +9,8 @@
 mat-sidenav {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* falls du später unten willst -> flex-end */
-  padding-top: 80px; // <-- Abstand von oben z.B. 80px
+  justify-content: flex-start;
+  padding-top: 120px;
   width: 240px;
 }
 
@@ -19,7 +19,7 @@ mat-sidenav {
   top: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: 70px;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@ mat-sidenav {
 }
 
 .logo {
-  height: 64px;
+  height: 70px;
   display: flex;
   align-items: center;
 }
