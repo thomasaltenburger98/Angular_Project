@@ -1,1 +1,53 @@
-<p>book-detail-user works!</p>
+<div class="book-detail-grid">
+  @if (book) {
+    <div class="book-detail-left">
+      <h2>{{ book.title }}</h2>
+
+      <mat-list>
+        <mat-list-item>
+          <strong>Preis:</strong> {{ book.price | currency: 'EUR' }}
+        </mat-list-item>
+        <mat-list-item>
+          <strong>Beschreibung:</strong> {{ book.description }}
+        </mat-list-item>
+      </mat-list>
+
+      <strong>Autoren:</strong>
+
+      @for (author of getAuthorsOfBook(); track author.id) {
+        <mat-card class="author-card">
+          <mat-card-content class="author-info">
+            <mat-icon color="primary">person</mat-icon>
+            <span class="author-name">{{ author.firstname }} {{ author.lastname }}</span>
+          </mat-card-content>
+        </mat-card>
+      }
+
+      <div class="author-actions">
+        <button mat-raised-button color="primary" (click)="onAddToCartClick()">
+          <mat-icon>add</mat-icon>
+          Zum Warenkorb hinzufügen
+        </button>
+      </div>
+
+
+
+    </div>
+    <div class="book-detail-right">
+      <mat-card>
+        <img mat-card-image [src]="book.imgSrc" alt="Buchcover" />
+      </mat-card>
+
+    </div>
+
+
+
+
+  }
+
+  @else {
+    <p>Buch nicht gefunden.</p>
+  }
+</div>
+
+

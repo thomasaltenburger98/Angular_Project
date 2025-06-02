@@ -5,10 +5,12 @@ import {CartModalComponent} from './features/cart/cart-modal/cart-modal.componen
 import {BookListAdminComponent} from './features/books/book-list-admin/book-list-admin.component';
 import {AuthorListAdminComponent} from './features/authors/author-list-admin/author-list-admin.component';
 import {HomeComponent} from './features/home/home.component';
+import {BookDetailUserComponent} from './features/books/book-detail-user/book-detail-user.component';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'books/book-list-user', component: BookListUserComponent},
+  {path: 'books/book-detail-user/:id', component: BookDetailUserComponent},
   {path: 'authors/author-list-user', component: AuthorListUserComponent},
   {path: 'cart/cart-modal', component: CartModalComponent},
   {path: 'books/book-list-admin', component: BookListAdminComponent},
