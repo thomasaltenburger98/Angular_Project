@@ -1,0 +1,39 @@
+.admin-book-list {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1rem 1rem 1rem; }
+
+  .add-button-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+}
+
+.book-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+
+    .delete-button {
+      display: inline-flex;
+    }
+  }
+}
+
+.delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+

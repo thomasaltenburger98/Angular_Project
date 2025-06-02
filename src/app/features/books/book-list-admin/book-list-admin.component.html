@@ -1,1 +1,39 @@
-<p>book-list-admin works!</p>
+<div class="admin-book-list">
+  <div class="add-button-container">
+    <button mat-raised-button color="primary" (click)="addBook()">
+      + Buch hinzufügen
+    </button>
+  </div>
+
+  <div class="book-grid">
+
+
+    @for (book of books; track book.id) {
+      <mat-card class="book-card" (click)="goToDetail(book.id)">
+        <mat-card-header>
+          <mat-card-title>{{ book.title }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>{{ book.price | currency: 'EUR' }}</p>
+        </mat-card-content>
+
+        <button
+          mat-mini-fab
+          color="warn"
+          class="delete-button"
+          (click)="deleteBook(book); $event.stopPropagation()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card>
+    }
+
+    @empty {
+      <p>Keine Bücher verfügbar.</p>
+    }
+  </div>
+
+
+
+
+
