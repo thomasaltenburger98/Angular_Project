@@ -28,9 +28,8 @@ export class BookService {
       map(response => response.books)
     );
   }
+  addBook(book: Omit<Book, 'id'>): Observable<Book> {
+    return this.http.post<Book>('http://localhost:3000/books', book);
+  }
 
-/*
-    getBooks(): Observable<Book[]>{
-      return this.http.get<Book[]>(this.filePath);
-  }*/
 }

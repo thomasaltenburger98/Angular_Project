@@ -37,8 +37,7 @@ export class BookListAdminComponent implements OnInit {
     this.router.navigate(['/books/book-edit-admin', bookId]);
   }
   addBook(): void {
-    // TODO: Navigation zu Buch-Formular (leeres Formular)
-    console.log('Buch hinzufügen – TODO: Routing oder Dialog öffnen');
+    this.router.navigate(['/books/book-new-admin']);
   }
 
   deleteBook(book: Book): void {

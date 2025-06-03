@@ -9,12 +9,14 @@ import {BookDetailUserComponent} from './features/books/book-detail-user/book-de
 import {BookEditAdminComponent} from './features/books/book-edit-admin/book-edit-admin.component';
 import {AuthorDetailUserComponent} from './features/authors/author-detail-user/author-detail-user.component';
 import {AuthorEditAdminComponent} from './features/authors/author-edit-admin/author-edit-admin.component';
+import {BookNewAdminComponent} from './features/books/book-new-admin/book-new-admin.component';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'books/book-list-user', component: BookListUserComponent},
   {path: 'books/book-detail-user/:id', component: BookDetailUserComponent},
   {path: 'books/book-edit-admin/:id', component: BookEditAdminComponent},
+  { path: 'books/book-new-admin', component: BookNewAdminComponent },
   {path: 'authors/author-list-user', component: AuthorListUserComponent},
   { path: 'authors/author-detail-user/:id', component: AuthorDetailUserComponent },
   { path: 'authors/author-edit-admin/:id', component: AuthorEditAdminComponent },
