@@ -41,8 +41,13 @@ export class BookListAdminComponent implements OnInit {
   }
 
   deleteBook(book: Book): void {
-    // TODO: Dialog einbauen mit Bestätigung
-    console.log('Buch löschen – TODO: Buch wirklich löschen', book);
+    const confirmDelete = confirm(`Soll das Buch "${book.title}" wirklich gelöscht werden?`);
+    if (confirmDelete) {
+      this.bookService.deleteBook(book.id).subscribe(() => {
+        console.log('Buch gelöscht');
+        this.books = this.books.filter(b => b.id !== book.id); // UI aktualisieren
+      });
+    }
   }
 
 }
