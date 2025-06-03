@@ -2037,41 +2037,6 @@
   ],
   "authors": [
     {
-      "id": "0",
-      "firstname": "Litzy",
-      "lastname": "Herzog",
-      "bio": "foodie",
-      "birthday": "1952-04-10T09:52:43.813Z",
-      "books": [
-        85,
-        117,
-        122
-      ]
-    },
-    {
-      "id": "1",
-      "firstname": "Christelle",
-      "lastname": "Kuhlman",
-      "bio": "politics lover  ≡ƒöé",
-      "birthday": "1947-10-06T15:22:21.460Z",
-      "books": [
-        55,
-        106
-      ]
-    },
-    {
-      "id": "2",
-      "firstname": "Lydia",
-      "lastname": "Champlin",
-      "bio": "environmentalist, musician",
-      "birthday": "1967-09-19T14:13:27.238Z",
-      "books": [
-        39,
-        89,
-        112
-      ]
-    },
-    {
       "id": "3",
       "firstname": "Diana",
       "lastname": "Hackett",

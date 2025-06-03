@@ -9,17 +9,13 @@ export interface Book{
   price: number;
   authors: number[];
   imgSrc: string;
-
-
 }
-
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
   private filePath= 'assets/data/db.json';
-
 
   constructor(private http: HttpClient) {}
 

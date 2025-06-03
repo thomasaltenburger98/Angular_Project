@@ -21,7 +21,9 @@ import {Book} from '../../../core/book.service';
 })
 export class AuthorListAdminComponent implements OnInit {
   authors: Author[] = [];
-  constructor(private authorService: AuthorService, private router: Router) {}
+
+  constructor(private authorService: AuthorService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.authorService.getAuthors().subscribe((data) => {
@@ -37,8 +39,14 @@ export class AuthorListAdminComponent implements OnInit {
     // TODO: Navigation zu Buch-Formular (leeres Formular)
     console.log('Buch hinzufügen – TODO: Routing oder Dialog öffnen');
   }
+
   deleteAuthor(author: Author): void {
-    // TODO: Dialog einbauen mit Bestätigung
-    console.log('Buch löschen – TODO: Buch wirklich löschen', author);
+    const confirmDelete = confirm('Soll der Autor wirklich gelöscht werden?');
+    if (confirmDelete) {
+      this.authorService.deleteAuthor(author.id).subscribe(() => {
+        console.log('Autor gelöscht');
+        this.authors = this.authors.filter(a => a.id !== author.id); // Liste lokal aktualisieren
+      });
+    }
   }
 }

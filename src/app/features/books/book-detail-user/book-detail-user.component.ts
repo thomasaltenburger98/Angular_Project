@@ -46,8 +46,19 @@ export class BookDetailUserComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private bookService: BookService, private authorService: AuthorService) {}
-
   ngOnInit(): void {
+    const id: number = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.bookService.getBookById(id).subscribe((book: Book) => {
+      this.book = book;
+    });
+
+    this.authorService.getAuthors().subscribe((data: Author[]) => {
+      this.authors = data;
+    });
+  }
+
+/*  ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.bookService.getBooks().subscribe(books => {
       this.book = books.find(b => b.id === id);
@@ -56,7 +67,7 @@ export class BookDetailUserComponent implements OnInit {
       this.authors = data;
     });
 
-  }
+  }*/
 
   getAuthorsOfBook(): Author[] {
     if (!this.book || !this.book.authors) return [];

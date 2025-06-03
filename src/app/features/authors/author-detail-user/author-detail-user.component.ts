@@ -28,13 +28,12 @@ export class AuthorDetailUserComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.authorService.getAuthorById(id).subscribe((author) => {
       this.author = author;
-      if (author) {
-        this.bookService.getBooks().subscribe((allBooks) => {
-          this.books = allBooks.filter(book => author.books.includes(book.id));
-        });
-      }
+      this.bookService.getBooks().subscribe((allBooks) => {
+        this.books = allBooks.filter(book => author.books.includes(book.id));
+      });
     });
   }
+
 
 
 /*  ngOnInit(): void {

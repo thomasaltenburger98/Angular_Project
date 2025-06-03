@@ -1,31 +1,40 @@
-<div class="author-detail-container">
-  @if (author) {
-    <h2>{{ author.firstname }} {{ author.lastname }}</h2>
+<h2>Autor bearbeiten</h2>
 
-    <mat-card class="author-info-card">
-      <p><strong>Geburtstag:</strong> {{ author.birthday }}</p>
-      <p><strong>Biografie:</strong> {{ author.bio }}</p>
-    </mat-card>
+<form [formGroup]="authorForm" (ngSubmit)="onSubmit()" class="author-detail-container">
+  <mat-card class="author-info-card">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Vorname</mat-label>
+      <input matInput formControlName="firstname" required />
+    </mat-form-field>
 
-    <mat-card class="author-books-card">
-      <p><strong>Veröffentlichte Bücher:</strong></p>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Nachname</mat-label>
+      <input matInput formControlName="lastname" required />
+    </mat-form-field>
 
-      @if (books.length > 0) {
-        <ul>
-          @for (book of books; track book.id) {
-            <li>
-              <a [routerLink]="['/books/book-detail-user', book.id]">
-                {{ book.title }}
-              </a>
-            </li>
-          }
-        </ul>
-      } @else {
-        <p>Keine Bücher vorhanden.</p>
-      }
-    </mat-card>
-  }
-  @else {
-    <p>Autor nicht gefunden.</p>
-  }
-</div>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Geburtstag</mat-label>
+      <input matInput formControlName="birthday" type="date" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Biografie</mat-label>
+      <textarea matInput formControlName="bio"></textarea>
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card class="author-books-card">
+    <p><strong>Veröffentlichte Bücher:</strong></p>
+    <ul>
+      <li *ngFor="let book of books">
+        <a [routerLink]="['/books/book-detail-user', book.id]">{{ book.title }}</a>
+      </li>
+    </ul>
+  </mat-card>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary" type="submit" [disabled]="authorForm.invalid">Speichern</button>
+    <button mat-raised-button color="warn" type="button" (click)="onDelete()">Löschen</button>
+  </div>
+</form>
+

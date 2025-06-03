@@ -25,11 +25,17 @@ export class AuthorService {
     );
   }
 
-  getAuthorById(id: number): Observable<Author | undefined> {
-    return this.getAuthors().pipe(
-      map((authors) => authors.find((author) => author.id === id))
-    );
+
+  getAuthorById(id: number): Observable<Author> {
+    return this.http.get<Author>(`http://localhost:3000/authors/${id}`);
   }
+  updateAuthor(author: Author): Observable<Author> {
+    return this.http.put<Author>(`http://localhost:3000/authors/${author.id}`, author);
+  }
+  deleteAuthor(id: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:3000/authors/${id}`);
+  }
+
 
 
 }
