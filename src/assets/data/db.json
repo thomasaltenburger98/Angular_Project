@@ -1,22 +1,8 @@
 {
   "books": [
     {
-      "id": "0",
-      "title": "feed index",
-      "description": "You can't override the bandwidth without navigating the back-end SMTP alarm!",
-      "price": "27.32",
-      "authors": [
-        7,
-        78,
-        195,
-        253,
-        270
-      ],
-      "imgSrc": "https://picsum.photos/seed/WGFeo7Xy/640/480"
-    },
-    {
       "id": "1",
-      "title": "pixel quantify",
+      "title": "pixel quantify neu",
       "description": "I'll transmit the multi-byte THX bandwidth, that should hard drive the VGA firewall!",
       "price": "28.72",
       "authors": [
