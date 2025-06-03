@@ -1,1 +1,31 @@
-<p>author-edit-admin works!</p>
+<div class="author-detail-container">
+  @if (author) {
+    <h2>{{ author.firstname }} {{ author.lastname }}</h2>
+
+    <mat-card class="author-info-card">
+      <p><strong>Geburtstag:</strong> {{ author.birthday }}</p>
+      <p><strong>Biografie:</strong> {{ author.bio }}</p>
+    </mat-card>
+
+    <mat-card class="author-books-card">
+      <p><strong>Veröffentlichte Bücher:</strong></p>
+
+      @if (books.length > 0) {
+        <ul>
+          @for (book of books; track book.id) {
+            <li>
+              <a [routerLink]="['/books/book-detail-user', book.id]">
+                {{ book.title }}
+              </a>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p>Keine Bücher vorhanden.</p>
+      }
+    </mat-card>
+  }
+  @else {
+    <p>Autor nicht gefunden.</p>
+  }
+</div>

@@ -1,0 +1,34 @@
+.author-detail-container {
+  padding: 3rem 45rem 1rem 1rem;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.author-info-card,
+.author-books-card {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: #3f51b5;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

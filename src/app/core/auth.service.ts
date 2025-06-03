@@ -6,7 +6,7 @@ type Role = 'user' | 'admin' | null;
   providedIn: 'root'
 })
 export class AuthService {
-  private role: Role = 'user'; // Für Test: 'admin' oder 'user'
+  private role: Role = 'admin'; // Für Test: 'admin' oder 'user'
 
   getRole(): Role {
     return this.role;
