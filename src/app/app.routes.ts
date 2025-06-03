@@ -7,6 +7,8 @@ import {AuthorListAdminComponent} from './features/authors/author-list-admin/aut
 import {HomeComponent} from './features/home/home.component';
 import {BookDetailUserComponent} from './features/books/book-detail-user/book-detail-user.component';
 import {BookEditAdminComponent} from './features/books/book-edit-admin/book-edit-admin.component';
+import {AuthorDetailUserComponent} from './features/authors/author-detail-user/author-detail-user.component';
+import {AuthorEditAdminComponent} from './features/authors/author-edit-admin/author-edit-admin.component';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,6 +16,8 @@ export const routes: Routes = [
   {path: 'books/book-detail-user/:id', component: BookDetailUserComponent},
   {path: 'books/book-edit-admin/:id', component: BookEditAdminComponent},
   {path: 'authors/author-list-user', component: AuthorListUserComponent},
+  { path: 'authors/author-detail-user/:id', component: AuthorDetailUserComponent },
+  { path: 'authors/author-edit-admin/:id', component: AuthorEditAdminComponent },
   {path: 'cart/cart-modal', component: CartModalComponent},
   {path: 'books/book-list-admin', component: BookListAdminComponent},
   {path: 'authors/author-list-admin', component: AuthorListAdminComponent}

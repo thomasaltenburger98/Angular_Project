@@ -1,1 +1,29 @@
-<p>author-list-admin works!</p>
+<div class="admin-book-list">
+  <div class="add-button-container">
+    <button mat-raised-button color="primary" (click)="addAuthor()">
+      + Autor hinzufügen
+    </button>
+  </div>
+
+  <div class="author-grid">
+  @for (author of authors; track author.id) {
+    <mat-card class="author-card" (click)="goToDetail(author.id)">
+      <mat-card-content class="author-info">
+        <mat-icon color="primary">person</mat-icon>
+        <span class="author-name">{{ author.firstname }} {{ author.lastname }}</span>
+      </mat-card-content>
+      <button
+        mat-mini-fab
+        color="warn"
+        class="delete-button"
+        (click)="deleteAuthor(author); $event.stopPropagation()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card>
+  }
+  @empty {
+    <p>Keine Autoren verfügbar.</p>
+  }
+</div>
+
+</div>

@@ -25,4 +25,11 @@ export class AuthorService {
     );
   }
 
+  getAuthorById(id: number): Observable<Author | undefined> {
+    return this.getAuthors().pipe(
+      map((authors) => authors.find((author) => author.id === id))
+    );
+  }
+
+
 }

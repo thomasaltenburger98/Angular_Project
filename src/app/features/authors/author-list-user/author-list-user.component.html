@@ -1,1 +1,14 @@
-<p>author-list-user works!</p>
+<div class="author-grid">
+  @for (author of authors; track author.id) {
+    <mat-card class="author-card" (click)="goToDetail(author.id)">
+      <mat-card-content class="author-info">
+        <mat-icon color="primary">person</mat-icon>
+        <span class="author-name">{{ author.firstname }} {{ author.lastname }}</span>
+      </mat-card-content>
+    </mat-card>
+  }
+  @empty {
+    <p>Keine Autoren verfügbar.</p>
+  }
+</div>
+
