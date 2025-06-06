@@ -1,3 +1,5 @@
+<app-search-bar (search)="filterBooks($event)"></app-search-bar>
+
 <div class="book-grid">
   @for (book of books; track book.id) {
     <mat-card class="book-card" (click)="goToDetail(book.id)">

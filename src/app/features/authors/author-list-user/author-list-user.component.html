@@ -1,3 +1,5 @@
+<app-search-bar (search)="filterAuthors($event)"></app-search-bar>
+
 <div class="author-grid">
   @for (author of authors; track author.id) {
     <mat-card class="author-card" (click)="goToDetail(author.id)">

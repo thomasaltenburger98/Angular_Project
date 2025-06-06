@@ -51,10 +51,13 @@ export class BookDetailUserComponent implements OnInit {
 
     this.bookService.getBookById(id).subscribe((book: Book) => {
       this.book = book;
+      console.log(this.book);
     });
 
     this.authorService.getAuthors().subscribe((data: Author[]) => {
-      this.authors = data;
+      this.authors = data.filter(author => {return author.books.includes(id)});
+      console.log(this.authors);
+      //this.authors = data;
     });
   }
 
@@ -71,7 +74,7 @@ export class BookDetailUserComponent implements OnInit {
 
   getAuthorsOfBook(): Author[] {
     if (!this.book || !this.book.authors) return [];
-    return this.authors.filter(author => this.book!.authors.includes(author.id));
+    return this.authors;
   }
 
   onAddToCartClick(): void {

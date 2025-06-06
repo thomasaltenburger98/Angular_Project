@@ -1,0 +1,42 @@
+@if (this.successfulCheckout) {
+    <h2 mat-dialog-title>Checkout erfolgreich!</h2>
+    <mat-dialog-content>
+      <p>Vielen Dank für Ihren Einkauf!</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button (click)="onContinueShopping()">weiter shoppen</button>
+    </mat-dialog-actions>
+} @else {
+    <h2 mat-dialog-title>Warenkorb</h2>
+    <mat-dialog-content>
+      <p>Gesamter Warenkorb hier ...</p>
+
+      <!-- Bücher sind hier -->
+      @for (book of booksInCart; track $index) {
+        <mat-card class="book-card">
+          <mat-card-header>
+            <mat-card-title>{{ book.title }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>{{ book.price | currency:'EUR' }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+
+      <div>
+            <h2>Gesamtpreis:</h2>
+            <p>{{ totalPrice | currency:'EUR' }}</p>
+      </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">schließen</button>
+      @if (this.isLoggedIn) {
+        <button mat-button (click)="onCheckout()">Checkout</button>
+      }
+      @else {
+        <button mat-button (click)="onLogin()">Login</button> 
+      }
+    </mat-dialog-actions>
+}

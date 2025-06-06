@@ -21,8 +21,7 @@ export class HomeComponent {
   }
 
 navigateToBooks(){
-    const role = this.auth.getRole();
-    if (role=== 'admin'){
+    if (this.auth.hasRole('admin')){
       this.router.navigate(['/books/book-list-admin']);
     }
     else {
@@ -31,8 +30,7 @@ navigateToBooks(){
 }
 
 navigateToAuthors(){
-    const role = this.auth.getRole();
-    if (role === 'admin'){
+    if (this.auth.hasRole('admin')){
       this.router.navigate(['/authors/author-list-admin']);
     }
     else {

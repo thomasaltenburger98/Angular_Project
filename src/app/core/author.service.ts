@@ -15,25 +15,24 @@ export interface Author {
   providedIn: 'root'
 })
 export class AuthorService {
-  private filePath = 'assets/data/db.json';
+  // private filePath = 'assets/data/db.json';
+  private filePath = 'http://localhost:3000/authors'; // Assuming you have a backend API
 
   constructor(private http: HttpClient) {
   }
   getAuthors(): Observable<Author[]> {
-    return this.http.get<{ authors: Author[] }>(this.filePath).pipe(
-      map(response => response.authors)
-    );
+    return this.http.get<Author[]>(this.filePath);
   }
 
 
   getAuthorById(id: number): Observable<Author> {
-    return this.http.get<Author>(`http://localhost:3000/authors/${id}`);
+    return this.http.get<Author>(`${this.filePath}/${id}`);
   }
   updateAuthor(author: Author): Observable<Author> {
-    return this.http.put<Author>(`http://localhost:3000/authors/${author.id}`, author);
+    return this.http.put<Author>(`${this.filePath}/${author.id}`, author);
   }
   deleteAuthor(id: number): Observable<void> {
-    return this.http.delete<void>(`http://localhost:3000/authors/${id}`);
+    return this.http.delete<void>(`${this.filePath}/${id}`);
   }
 
 
